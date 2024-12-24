@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fadel Tarhini Personal Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-box">
+                <h1>Fadel Tarhini</h1>
+                <h2>Mechanical Engineer, Robotics Engineer</h2>
+                <p>Ph.D. Researcher in Autonomous Vehicles, CNRS, 
+                    Heudiasyc UMR 7253</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showPanel('home')">Home</a></li>
+                <li><a href="#" onclick="showPanel('research')">Research</a></li>
+                <li><a href="#" onclick="showPanel('publications')">Publications</a></li>
+                <li><a href="#" onclick="showPanel('cv')">CV</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="panel active">
+            <div class="content">
+                <img src="photo_fadel.jpg" alt=" photo">
+                <p>
+                    Hi there! I am a Ph.D. candidate at the Université de Technologie de Compiègne (UTC), France, specializing in decision-making, trajectory planning, and control systems for autonomous over-actuated vehicles. My research aims to achieve holistic energy economy across the entire vehicle architecture, from decision-making processes to actuator coordination. 
+                    My work has led to significant advancements in energy efficiency, high control performance, efficient control allocation, robustness to uncertainties, trajectory planning comfort and safety, and the integration of energy-conscious and safety-aware decision-making strategies. <br>
+                    I hold a diplome in Mechanical Engineering from the Lebanese University, Lebanon, and a Master’s degree in Autonomous and Robotic Systems from UTC, France. These academic foundations have provided me with a comprehensive skill set from design and system engineering to syntax and coding. Through coursework, research, and personal projects, I have cultivated a solid background in design, modeling, and dynamics, in addition to robotic systems navigation, localization, motion planning, decision-making, and advanced control.  <br>
+                    Explore more about my research and publications in the tabs above.
+                </p>
+                <!-- <div class="links">
+                    <a href="https://fr.linkedin.com/in/fadel-tarhini-13a8371bb" target="_blank">Linkedin</a>
+                    <a href="https://scholar.google.com/citations?user=yjexhlYAAAAJ&hl=en" target="_blank">Google Scholar</a> 
+                    <a href="https://www.researchgate.net/profile/Fadel-Tarhini" target="_blank">ResearchGate</a>
+                </div> -->
+            </div>
+        </section>
+        <section id="research" class="panel">
+        <div class="content">
+            <h2>I- Advanced Vehicle Control</h2>
+            <div class="content-body">
+                <p>
+                A vehicle is a highly complex system with many variables, interconnected components, and nonlinear behavior, making its control a challenging task. To complicate matters, some key parameters are uncertain or nearly impossible to measure. This requires advanced control strategies that are robust to errors in the vehicle's model, adaptable to uncertainties, and capable of handling unexpected disturbances effectively.
+                To manage this complexity, the control system is usually organized into two levels. At the upper level, the required control inputs—such as how the vehicle should move—are determined. At the lower level, these inputs are executed by the physical components of the vehicle, like motors and brakes.
+                For vehicles equipped with four in-wheel motors (known as over-actuated vehicles), the lower level focuses on distributing the required torque among the motors. This process, called torque allocation, ensures the vehicle operates efficiently and reliably.
+                </p>
+            </div>
+            <h3>1) Upper-Level Control</h3>
+            <div class="content-body">
+                <p>
+                    The 
+                </p>
+                <video width="426" height="240" controls controlsList="nodownload" preload="none">
+                    <source src="video_st_1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>                
+            </div>
+        </div>
+
+        </section>
+        <section id="publications" class="panel">
+            <h2>Journal Articles </h2>
+            <p> [1] <b>F. Tarhini</b>, R. Talj and M. Doumiati,“Safe and Energy-Efficient Jerk-Controlled Speed Profiling for On-Road Autonomous Vehicles,” in IEEE Transactions on Intelligent Vehicles, 2024, <a href="https://ieeexplore.ieee.org/document/10564012" style="color: #0099ff" target="_blank"> doi: 10.1109/TIV.2024.3416551.</a> <br>
+                [2] <b>F. Tarhini</b>, R. Talj and M. Doumiati, “Dual-Level Control Architectures for OverActuated Autonomous Vehicle’s Stability, Path-Tracking, and Energy Economy,” in IEEE Transactions on Intelligent Vehicles, vol. 9, no. 1, pp. 287-303, Jan. 2024, <a href="https://ieeexplore.ieee.org/document/10319074" style="color: #0099ff" target="_blank"> doi:10.1109/TIV.2023.3333273. </a> <br> 
+                [3] <b>F. Tarhini</b>, R. Talj and M. Doumiati. “Dynamic and real-time continuous look-ahead distance for autonomous vehicles: an explicit formulation”, in Vehicle System Dynamics, vol. 62, no. 9, pp. 2210–2236, 2023. <a href="https://www.tandfonline.com/doi/abs/10.1080/00423114.2023.2280215" style="color: #0099ff" target="_blank"> doi:10.1080/00423114.2023.2280215. </a> </p> 
+                <h2>Conference Articles </h2>
+                <p>[4] <b>F. Tarhini</b>, R. Talj and M. Doumiati, “Hybrid energy-efficient local path planning for autonomous vehicles in dynamic environments”, 2024 IEEE 27th International Conference on Intelligent Transportation Systems (ITSC), Edmonton, Canada, 2024, <a href="https://hal.science/hal-04651719" style="color: #0099ff" target="_blank"> hal-04651719.  </a>  <br>
+                [5] <b>F. Tarhini</b>, R. Talj and M. Doumiati,“Driving Towards Energy Efficiency: A Novel Torque Allocation Strategy for In-Wheel Electric Vehicles,” 2023 IEEE 26th International Conference on Intelligent Transportation Systems (ITSC), Bilbao, Spain, 2023, pp. 1022-1029, <a href="https://ieeexplore.ieee.org/document/10421905" style="color: #0099ff" target="_blank">doi: 10.1109/ITSC57777.2023.10421905. </a> <br>
+                [6] <b>F. Tarhini</b>, R. Talj, and M. Doumiati, “Multi-objective control architecture for an autonomous in-wheel driven electric vehicle”. IFAC-PapersOnLine, 56(2):11470–11476, 2023, <a href="https://www.sciencedirect.com/science/article/pii/S2405896323008030" style="color: #0099ff" target="_blank">doi: 10.1016/j.ifacol.2023.10.436. </a> <br>
+                [7] <b>F. Tarhini</b>, R. Talj, and M. Doumiati, “Adaptive Look-Ahead Distance Based on an Intelligent Fuzzy Decision for an Autonomous Vehicle,” 2023 IEEE Intelligent Vehicles Symposium (IV), Anchorage, AK, USA, 2023, pp. 1-8, <a href="https://ieeexplore.ieee.org/document/10186791" style="color: #0099ff" target="_blank">doi: 10.1109/IV55152.2023.10186791. </a> </p>
+        </section>
+        <section id="cv" class="panel">
+            <h2>Curriculum Vitae (CV)</h2>
+            <p>Download cv here</p>
+            <a href="CV.pdf" target="_blank" class="download">Download CV</a>
+        </section>
+    </main>
+    <footer>       
+        <div class="links">
+            <a href="https://fr.linkedin.com/in/fadel-tarhini-13a8371bb" target="_blank">LinkedIn</a>
+            <a href="https://orcid.org/0009-0006-5456-5244" target="_blank">ORCID</a>
+            <a href="https://scholar.google.com/citations?user=yjexhlYAAAAJ&hl=en" target="_blank">Google Scholar</a>
+            <a href="https://www.researchgate.net/profile/Fadel-Tarhini" target="_blank">ResearchGate</a>
+        </div>
+        <p class="copyright">
+         © 2024 Fadel Tarhini | 
+            <a href="mailto:fadeltarhini@hotmail.com" style="color: #fff">fadeltarhini@hotmail.com</a>
+        </p> 
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
