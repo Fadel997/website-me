@@ -43,7 +43,7 @@
     <main>
         <section id="home" class="panel active">
             <div class="content">
-                <img src="photo_fadel.jpg" alt=" photo">
+                <img src="figs/photo_fadel.jpg" alt=" photo">
                 <p>
                     Hi there! I am a Ph.D. candidate at the Université de Technologie de Compiègne (UTC), France, specializing in decision-making, trajectory planning, and control systems for autonomous over-actuated vehicles. My research aims to achieve holistic energy economy across the entire vehicle architecture, from decision-making processes to actuator coordination. 
                     My work has led to significant advancements in energy efficiency, high control performance, efficient control allocation, robustness to uncertainties, trajectory planning comfort and safety, and the integration of energy-conscious and safety-aware decision-making strategies. <br>
@@ -73,7 +73,7 @@
                     The upper-level control is responsible for generating control inputs that correspond to some desired objectives. These objectives solicits the overall motion of the autonomous vehicle, like path-tracking, speed control, stability and handling control, rollover preventation, among others. To meet these objectives, the vehicle’s states are controlled to follow reference states generated as targets. The employed control techniques are numerous spanning linear, nonlinear, robust, and optimal control. In my research, the following control techniques are employed: Super-Twisting Sliding Mode control (STSMC), Linear Parameter Varying \((LPV)/\mathcal{H}_\infty\) Control, and Model Predictive Control (MPC). Key focus areas in my work include path-tracking, speed control, and stability control. The side video offers a brief overview on the developed work. Learn more about this work <a href="https://ieeexplore.ieee.org/document/10319074" style="color: #0099ff" target="_blank"> here</a> and <a href="https://www.sciencedirect.com/science/article/pii/S2405896323008030" style="color: #0099ff" target="_blank">here. </a>
                 </p>
                 <video width="300" height="auto" controls controlsList="nodownload" preload="none">
-                    <source src="video_st_1.mp4" type="video/mp4">
+                    <source src="figs/video_st_1.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>                
             </div>
@@ -83,7 +83,7 @@
                     Path-tracking control is achieved by adjusting the vehicle's steering angle to align with a predefined reference path. The steering value is determined by minimizing the lateral displacement error between the vehicle and the reference path. However, due to the vehicle's non-holonomic constraints—meaning it cannot move directly sideways—this error cannot be minimized directly at the vehicle's center of gravity. Instead, control is applied to minimize the lateral error at a predictive target point positioned at a look-ahead distance from the vehicle.
                     My research delves into the pivotal role of the look-ahead distance, exploring its impact on path-tracking accuracy, vehicle stability, and energy efficiency. Furthermore, it investigates how the look-ahead distance can be dynamically adapted to factors such as vehicle speed, road curvature, and road adhesion, ensuring enhanced performance across diverse driving conditions. Explore more about this work <a href="https://www.tandfonline.com/doi/abs/10.1080/00423114.2023.2280215" style="color: #0099ff" target="_blank">here </a> and <a href="https://ieeexplore.ieee.org/document/10186791" style="color: #0099ff" target="_blank">here. </a>
                 </p>
-                <img src="look-ahead.jpg" alt=" photo">              
+                <img src="figs/look-ahead.jpg" alt=" photo">              
             </div>
             <h3>3) Lower-Level Control</h3>
             <div class="content-body">
@@ -91,7 +91,7 @@
                     Over-actuated vehicles are innovative systems equipped with more actuators—like motors, brakes, or steering mechanisms—than are strictly needed to control their movement. In my research, the vehicle features four independent in-wheel motors. Why? This setup boosts flexibility in design, ensures rapid motor response, and enhances overall handling and stability.
                     To translate high-level control commands into action, torques are applied to the motors in either traction or braking mode. With an over-actuated system, there are infinite possible ways to distribute these torques among the motors. So, how do we decide? It all depends on the objectives. In my work, goals like maximizing energy efficiency, ensuring the motors operate in high efficient zones, and maintaining tire stability are combined into a single cost function. An optimization problem is then solved to determine the ideal torque distribution across the four motors. Explore more about this research <a href="https://ieeexplore.ieee.org/document/10319074" style="color: #0099ff" target="_blank"> here </a> and <a href="https://ieeexplore.ieee.org/document/10421905" style="color: #0099ff" target="_blank">here. </a>
                 </p>
-                <img src="efficiency_figure_2.png" alt=" photo">              
+                <img src="figs/efficiency_figure_2.png" alt=" photo">              
             </div>
             <h2>II- Trajectory Planning</h2>
             <div class="content-body">
@@ -107,14 +107,14 @@
                     Even after addressing these challenges, the quality of the path comes into question. How smooth is it? What is its curvature? And how close is it to being optimal? With the induced conservatism, absolute optimality is often impractical.
                     In my work, a hybrid approach is employed. A map aids navigation in structured environments, and a set of polynomial paths is generated to follow the road curvature. Using an occupancy grid, non-navigable paths are identified and discarded. The best path is then selected based on a predefined cost function. To enhance optimality, the chosen path is further refined with energy economy as the primary objective. Learn more about this method <a href="https://hal.science/hal-04651719" style="color: #0099ff" target="_blank"> here. </a> 
                 </p>
-                <img src="traj_method_2.png" alt=" photo">              
+                <img src="figs/traj_method_2.png" alt=" photo">              
             </div>
             <h3>2) Speed Planning</h3>
             <div class="content-body">
                 <p>                  
                     Speed planning
                 </p>
-                <img src="speed_profile_2.png" alt=" photo">              
+                <img src="figs/speed_profile_2.png" alt=" photo">              
             </div>
          
         </div>
