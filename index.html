@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fadel Tarhini Personal Website</title>
+    <title>Fadel Tarhini</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+<script src="script.js" defer></script>
 <body>
     <header>
         <div class="container">
@@ -15,12 +17,25 @@
                 <p>Ph.D. Researcher in Autonomous Vehicles, CNRS, 
                     Heudiasyc UMR 7253</p>
             </div>
-        </div>
+        </div>     
+        <div class="header-right">
+            <div class="theme-toggle">
+                <label>
+                    <input type="radio" id="lightMode" name="theme" value="light" />
+                    <img src="sun_shape.png" alt="Sun" class="mode-icon" /> Light Mode
+                </label>
+                <label>
+                    <input type="radio" id="darkMode" name="theme" value="dark" />
+                    <img src="moon_shape.svg" alt="Moon" class="mode-icon" /> Dark Mode
+                </label>
+            </div>  
+        </div>        
         <nav>
             <ul>
                 <li><a href="#" onclick="showPanel('home')">Home</a></li>
                 <li><a href="#" onclick="showPanel('research')">Research</a></li>
                 <li><a href="#" onclick="showPanel('publications')">Publications</a></li>
+                <li><a href="#" onclick="showPanel('personal projects')">Personal Projects</a></li>
                 <li><a href="#" onclick="showPanel('cv')">CV</a></li>
             </ul>
         </nav>
@@ -49,21 +64,60 @@
                 <p>
                 A vehicle is a highly complex system with many variables, interconnected components, and nonlinear behavior, making its control a challenging task. To complicate matters, some key parameters are uncertain or nearly impossible to measure. This requires advanced control strategies that are robust to errors in the vehicle's model, adaptable to uncertainties, and capable of handling unexpected disturbances effectively.
                 To manage this complexity, the control system is usually organized into two levels. At the upper level, the required control inputs—such as how the vehicle should move—are determined. At the lower level, these inputs are executed by the physical components of the vehicle, like motors and brakes.
-                For vehicles equipped with four in-wheel motors (known as over-actuated vehicles), the lower level focuses on distributing the required torque among the motors. This process, called torque allocation, ensures the vehicle operates efficiently and reliably.
+                For vehicles equipped with four in-wheel motors (known as over-actuated vehicles), the lower level focuses on distributing the required torques among the motors. This process, called torque allocation, ensures the vehicle operates efficiently and reliably.
                 </p>
             </div>
             <h3>1) Upper-Level Control</h3>
             <div class="content-body">
                 <p>
-                    The 
+                    The upper-level control is responsible for generating control inputs that correspond to some desired objectives. These objectives solicits the overall motion of the autonomous vehicle, like path-tracking, speed control, stability and handling control, rollover preventation, among others. To meet these objectives, the vehicle’s states are controlled to follow reference states generated as targets. The employed control techniques are numerous spanning linear, nonlinear, robust, and optimal control. In my research, the following control techniques are employed: Super-Twisting Sliding Mode control (STSMC), Linear Parameter Varying \((LPV)/\mathcal{H}_\infty\) Control, and Model Predictive Control (MPC). Key focus areas in my work include path-tracking, speed control, and stability control. The side video offers a brief overview on the developed work. Learn more about this work <a href="https://ieeexplore.ieee.org/document/10319074" style="color: #0099ff" target="_blank"> here</a> and <a href="https://www.sciencedirect.com/science/article/pii/S2405896323008030" style="color: #0099ff" target="_blank">here. </a>
                 </p>
-                <video width="426" height="240" controls controlsList="nodownload" preload="none">
+                <video width="300" height="auto" controls controlsList="nodownload" preload="none">
                     <source src="video_st_1.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>                
             </div>
+            <h3>2) Look-Ahead Distance</h3>
+            <div class="content-body">
+                <p>
+                    Path-tracking control is achieved by adjusting the vehicle's steering angle to align with a predefined reference path. The steering value is determined by minimizing the lateral displacement error between the vehicle and the reference path. However, due to the vehicle's non-holonomic constraints—meaning it cannot move directly sideways—this error cannot be minimized directly at the vehicle's center of gravity. Instead, control is applied to minimize the lateral error at a predictive target point positioned at a look-ahead distance from the vehicle.
+                    My research delves into the pivotal role of the look-ahead distance, exploring its impact on path-tracking accuracy, vehicle stability, and energy efficiency. Furthermore, it investigates how the look-ahead distance can be dynamically adapted to factors such as vehicle speed, road curvature, and road adhesion, ensuring enhanced performance across diverse driving conditions. Explore more about this work <a href="https://www.tandfonline.com/doi/abs/10.1080/00423114.2023.2280215" style="color: #0099ff" target="_blank">here </a> and <a href="https://ieeexplore.ieee.org/document/10186791" style="color: #0099ff" target="_blank">here. </a>
+                </p>
+                <img src="look-ahead.jpg" alt=" photo">              
+            </div>
+            <h3>3) Lower-Level Control</h3>
+            <div class="content-body">
+                <p>                  
+                    Over-actuated vehicles are innovative systems equipped with more actuators—like motors, brakes, or steering mechanisms—than are strictly needed to control their movement. In my research, the vehicle features four independent in-wheel motors. Why? This setup boosts flexibility in design, ensures rapid motor response, and enhances overall handling and stability.
+                    To translate high-level control commands into action, torques are applied to the motors in either traction or braking mode. With an over-actuated system, there are infinite possible ways to distribute these torques among the motors. So, how do we decide? It all depends on the objectives. In my work, goals like maximizing energy efficiency, ensuring the motors operate in high efficient zones, and maintaining tire stability are combined into a single cost function. An optimization problem is then solved to determine the ideal torque distribution across the four motors. Explore more about this research <a href="https://ieeexplore.ieee.org/document/10319074" style="color: #0099ff" target="_blank"> here </a> and <a href="https://ieeexplore.ieee.org/document/10421905" style="color: #0099ff" target="_blank">here. </a>
+                </p>
+                <img src="efficiency_figure_2.png" alt=" photo">              
+            </div>
+            <h2>II- Trajectory Planning</h2>
+            <div class="content-body">
+                <p>             
+                    Trajectory planning is the critical process where an autonomous vehicle computes a safe and feasible route in real-time, accounting for obstacles, traffic, and other road conditions. In dynamic environments, this task becomes increasingly more sophisticated. The vehicle must not only navigate around moving obstacles but also predict the behavior and intentions of human drivers, adapting to constantly changing scenarios.
+                    Moreover, the planned trajectory must meet specific objectives, such as ensuring passenger comfort by creating smooth, non-jerky movements, adhering to road regulations, and sometimes prioritizing energy efficiency. Trajectory planning is typically divided into two key components: path planning, which determines the spatial route the vehicle will follow, and speed planning, which manages how the vehicle moves along that path over time. Together, these elements enable the vehicle to operate safely, efficiently, and comfortably in dynamic real-world conditions. 
+                </p>
+            </div>
+            <h3>1) Path Planning</h3>
+            <div class="content-body">
+                <p>                  
+                    Determining a safe and feasible path in dynamic environments is a complex challenge. Why? It stems from the limitations of perception systems and the uncertainty in understanding other vehicles’ behaviors, drivers’ intentions, sudden obstacles, and the overall uncetainty in the environment. Achieving a globally optimal path is another hurdle. The search space is vast, and surrounding obstacles must often be simplified into specific shapes for optimization, not to mention the partial accessibility on the structure of the environment.
+                    Even after addressing these challenges, the quality of the path comes into question. How smooth is it? What is its curvature? And how close is it to being optimal? With the induced conservatism, absolute optimality is often impractical.
+                    In my work, a hybrid approach is employed. A map aids navigation in structured environments, and a set of polynomial paths is generated to follow the road curvature. Using an occupancy grid, non-navigable paths are identified and discarded. The best path is then selected based on a predefined cost function. To enhance optimality, the chosen path is further refined with energy economy as the primary objective. Learn more about this method <a href="https://hal.science/hal-04651719" style="color: #0099ff" target="_blank"> here. </a> 
+                </p>
+                <img src="traj_method_2.png" alt=" photo">              
+            </div>
+            <h3>2) Speed Planning</h3>
+            <div class="content-body">
+                <p>                  
+                    Speed planning
+                </p>
+                <img src="speed_profile_2.png" alt=" photo">              
+            </div>
+         
         </div>
-
         </section>
         <section id="publications" class="panel">
             <h2>Journal Articles </h2>
@@ -75,6 +129,10 @@
                 [5] <b>F. Tarhini</b>, R. Talj and M. Doumiati,“Driving Towards Energy Efficiency: A Novel Torque Allocation Strategy for In-Wheel Electric Vehicles,” 2023 IEEE 26th International Conference on Intelligent Transportation Systems (ITSC), Bilbao, Spain, 2023, pp. 1022-1029, <a href="https://ieeexplore.ieee.org/document/10421905" style="color: #0099ff" target="_blank">doi: 10.1109/ITSC57777.2023.10421905. </a> <br>
                 [6] <b>F. Tarhini</b>, R. Talj, and M. Doumiati, “Multi-objective control architecture for an autonomous in-wheel driven electric vehicle”. IFAC-PapersOnLine, 56(2):11470–11476, 2023, <a href="https://www.sciencedirect.com/science/article/pii/S2405896323008030" style="color: #0099ff" target="_blank">doi: 10.1016/j.ifacol.2023.10.436. </a> <br>
                 [7] <b>F. Tarhini</b>, R. Talj, and M. Doumiati, “Adaptive Look-Ahead Distance Based on an Intelligent Fuzzy Decision for an Autonomous Vehicle,” 2023 IEEE Intelligent Vehicles Symposium (IV), Anchorage, AK, USA, 2023, pp. 1-8, <a href="https://ieeexplore.ieee.org/document/10186791" style="color: #0099ff" target="_blank">doi: 10.1109/IV55152.2023.10186791. </a> </p>
+        </section>
+        <section id="personal projects" class="panel">
+            <h2>Projects </h2>
+            
         </section>
         <section id="cv" class="panel">
             <h2>Curriculum Vitae (CV)</h2>
