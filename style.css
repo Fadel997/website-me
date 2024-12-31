@@ -286,6 +286,171 @@ video {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+.projects-chart {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    gap: 20px;
+  }
+  
+  .category {
+    background-color: #2b2b2b1a;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
+  }
+  
+  /* Dark Mode Specific Styles */
+:root.dark-mode .category {
+    background-color: #444; /* Darker background for blocks in dark mode */
+    color: #e0e0e0; /* Lighter text color for better contrast */
+}
+  /* Styles for smaller screens (e.g., mobile) */
+@media (max-width: 768px) {
+    .projects-chart {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .category {
+      width: 90%; /* Full-width for smaller screens */
+    }
+  }
+
+  .project {
+    margin: 35px 0;
+    text-align: center;
+    border-radius: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .project img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project.clicked {
+    transform: scale(1.05); /* Persistent zoom */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Persistent shadow */
+  }
+  
+  /* Ensure hover doesn't override the clicked state */
+  .project:hover:not(.clicked) {
+    transform: scale(1.05); /* Zoom on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+  }
+  
+  .project .click-to-expand {
+    font-size: 0.9em;
+    color: var(--text-color);
+  }
+  
+  .project.clicked:not(.expanded) {
+    transform: none; /* Reset zoom when not expanded */
+    box-shadow: none; /* Reset shadow when not expanded */
+}
+  .project-details {
+    display: none; /* Hidden by default */
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .project.expanded {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Persistent shadow */
+    z-index: 1; /* Bring to front to prevent overlap */
+    background-color: #2b2b2b1a;
+    border-radius: 20px;
+}
+
+:root.dark-mode .project.expanded  {
+    background-color: #3b3b3b; /* Darker background for blocks in dark mode */
+    color: #e0e0e0; /* Lighter text color for better contrast */
+}
+  
+  .project.expanded .project-details {
+    display: block; /* Show details when expanded */
+  }
+  
+  .project.expanded .click-to-expand,
+  .project.expanded .main-image {
+    display: none; /* Hide the "Click to expand" text and main image */
+  }
+  
+  .additional-images img {
+    margin-top: 10px;
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Adjust hover behavior to avoid conflicts */
+.project:hover:not(.expanded) {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+  
+  .project h3 {
+    margin: 10px 0;
+  }
+
+  .project h4 {
+    font-size: 1em;
+    color: var(--text-color);
+    margin-bottom: 50px;
+  }
+  
+  .project p {
+    font-size: 0.9em;
+    color: var(--text-color);
+    text-align: left;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: justify; /* Center-align text */
+  }
+  
+  .project-section {
+    margin-bottom: 20px; /* Adjust value as needed */
+}
+
+.project-section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+  .expand-collapse-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .expand-collapse-buttons button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .expand-collapse-buttons button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+  }
+  
+  :root.dark-mode .expand-collapse-buttons button  {
+    background-color: #444; /* Darker background for blocks in dark mode */
+    color: #e0e0e0; /* Lighter text color for better contrast */
+}
+  
 /* Light Theme */
 :root {
     --bg-color: #ffffff;
@@ -351,8 +516,119 @@ body {
     border-color: var(--accent-color);
 }
 
+@media (max-width: 768px) {
+    header {
+        text-align: center;
+        padding: 15px;
+    }
+    header h1 {
+        font-size: 1.2em; /* Scale down text size */
+    }
+    header h2 {
+        font-size: 1em;
+    }
+    header p {
+        font-size: 0.8em;
+    }
+    .header-right {
+        flex-direction: column;
+        position: static; /* Remove fixed positioning */
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    nav ul li a {
+        font-size: 0.9em; /* Adjust font size */
+    }
+}
+
+@media (max-width: 768px) {
+    .panel {
+        padding: 15px;
+    }
+    #home .content {
+        flex-direction: column; /* Stack elements */
+        text-align: center;
+    }
+    #home img {
+        width: 150px; /* Adjust size */
+        height: 150px;
+    }
+    #home .content .text {
+        max-width: 100%; /* Allow full width */
+    }
+    #research .content-body {
+        flex-direction: column; /* Stack text and figure */
+    }
+    #research img {
+        width: 100%; /* Full width */
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-chart {
+        flex-direction: column; /* Stack categories */
+        gap: 15px;
+    }
+    .category {
+        width: 100%; /* Full width */
+    }
+    .project {
+        margin: 50px 0; /* Reduce margin */
+    }
+    .project img {
+        width: 100%; /* Full width for images */
+        border-radius: 5px;
+    }
+    .project h4 {
+        margin-bottom: 90px;
+      }
+}
+
+@media (max-width: 768px) {
+    .theme-toggle {
+        font-size: 0.5em;
+        width: 250px;  /* Set a small size for the icon */
+        height: 30px;
+    }
+    .theme-toggle label {
+        border: 1px solid var(--text-color);
+    }
+    .mode-icon {
+        width: 15px;  /* Set a small size for the icon */
+        height: 15px;
+        margin-right: 8px;  /* Space between the icon and text */
+    }
+}
+
+@media (max-width: 768px) {
+    .expand-collapse-buttons button {
+        font-size: 0.8em;
+      }
+}
 
 
 
-
-  
+@media (max-width: 768px) {
+    footer {
+        padding: 10px;
+        font-size: 0.8em; /* Reduce font size */
+    }
+    footer .links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+ 
+img {
+    max-width: 100%;
+    height: auto;
+}

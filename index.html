@@ -22,11 +22,11 @@
             <div class="theme-toggle">
                 <label>
                     <input type="radio" id="lightMode" name="theme" value="light" />
-                    <img src="sun_shape.png" alt="Sun" class="mode-icon" /> Light Mode
+                    <img src="figs/sun_shape.png" alt="Sun" class="mode-icon" /> Light Mode
                 </label>
                 <label>
                     <input type="radio" id="darkMode" name="theme" value="dark" />
-                    <img src="moon_shape.svg" alt="Moon" class="mode-icon" /> Dark Mode
+                    <img src="figs/moon_shape.svg" alt="Moon" class="mode-icon" /> Dark Mode
                 </label>
             </div>  
         </div>        
@@ -72,7 +72,7 @@
                 <p>
                     The upper-level control is responsible for generating control inputs that correspond to some desired objectives. These objectives solicits the overall motion of the autonomous vehicle, like path-tracking, speed control, stability and handling control, rollover preventation, among others. To meet these objectives, the vehicle’s states are controlled to follow reference states generated as targets. The employed control techniques are numerous spanning linear, nonlinear, robust, and optimal control. In my research, the following control techniques are employed: Super-Twisting Sliding Mode control (STSMC), Linear Parameter Varying \((LPV)/\mathcal{H}_\infty\) Control, and Model Predictive Control (MPC). Key focus areas in my work include path-tracking, speed control, and stability control. The side video offers a brief overview on the developed work. Learn more about this work <a href="https://ieeexplore.ieee.org/document/10319074" style="color: #0099ff" target="_blank"> here</a> and <a href="https://www.sciencedirect.com/science/article/pii/S2405896323008030" style="color: #0099ff" target="_blank">here. </a>
                 </p>
-                <video width="300" height="auto" controls controlsList="nodownload" preload="none">
+                <video width="300" height="auto" controls controlsList="nodownload">
                     <source src="figs/video_st_1.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>                
@@ -112,7 +112,9 @@
             <h3>2) Speed Planning</h3>
             <div class="content-body">
                 <p>                  
-                    Speed planning
+                    Once a spatial path is determined, the next critical step is planning the vehicle's navigation over time. This involves generating a speed profile that considers surrounding obstacles, traffic conditions, and road characteristics. The safety of the overall trajectory (path + speed) heavily depends on speed adjustments, not just the path itself.
+                    For instance, maintaining safety might require precise acceleration or deceleration to avoid collisions with nearby vehicles. In more complex scenarios, predictive planning becomes essential, such as anticipating a potential collision zone involving multiple vehicles in the near future. The speed must then be carefully adjusted to bypass these critical areas safely.
+                    In my work, speed profiling is achieved using a quintic polynomial function of time. This approach enables control over the first and second derivatives of speed,  ensuring smoother motion while improving comfort and energy efficiency. The criteria for speed planning consider various factors, including surrounding vehicles, road curvature, adherence, and gradient. Explore more about this approach <a href="https://ieeexplore.ieee.org/document/10564012" style="color: #0099ff" target="_blank"> here.</a>
                 </p>
                 <img src="figs/speed_profile_2.png" alt=" photo">              
             </div>
@@ -131,7 +133,148 @@
                 [7] <b>F. Tarhini</b>, R. Talj, and M. Doumiati, “Adaptive Look-Ahead Distance Based on an Intelligent Fuzzy Decision for an Autonomous Vehicle,” 2023 IEEE Intelligent Vehicles Symposium (IV), Anchorage, AK, USA, 2023, pp. 1-8, <a href="https://ieeexplore.ieee.org/document/10186791" style="color: #0099ff" target="_blank">doi: 10.1109/IV55152.2023.10186791. </a> </p>
         </section>
         <section id="personal projects" class="panel">
-            <h2>Projects </h2>
+          <div class="expand-collapse-buttons">
+            <button id="expandAll">Expand All</button>
+            <button id="collapseAll">Collapse All</button>
+          </div>
+            <div class="projects-chart">
+                <div class="category" id="engineering">
+                  <h2>Engineering Projects</h2>
+                  <div class="project" id="project1" onclick="expandProject(this)">
+                    <h3>1) Structural Analysis App</h3>
+                    <img src="figs/project1_1.png" alt="Project 1" class="main-image" style="width: 150px; height: auto;">
+                    <h4 class="click-to-expand">Click to expand.</h4>
+                    <div class="project-details">
+                      <p>- Created a user-friendly application in MATLAB to provide advanced tools for structural analysis, with a focus on hyper-static beam analysis. Key features of the app include:  <br>
+                        i) <b>Customizable Input:</b> Allows users to define any number of hinges, forces, moments, and loads of various shapes.  <br>
+                        ii) <b>Precision Diagram Generation:</b> Produces highly accurate shear stress and bending moment diagrams for hyper-static beams. <br>
+                        iii) <b>Stress Distribution Visualization:</b> Generates precise normal and shear stress distributions for a range of cross-section shapes, including circular, rectangular, and I-beams. <br>
+                        - This application combines technical accuracy with an intuitive interface, making structural analysis accessible and efficient for engineers and researchers.
+                      </p>
+                      <div class="additional-images">
+                        <img src="figs/project1_1.png" alt="Project 1" style="width: 300px; height: auto;">
+                        <img src="figs/project1_4.png" alt="Project 1" style="width: 300px; height: auto;">
+                        <img src="figs/project1_3.png" alt="Project 1" style="width: 300px; height: auto;">
+                        <img src="figs/project1_2.png" alt="Project 1" style="width: 300px; height: auto;">
+                      </div>
+                      <h4>Click to collapse.</h4>
+                    </div>
+                  </div>                             
+                  <div class="project" id="project2" onclick="expandProject(this)">
+                    <h3>2) Electric Buggy Design</h3>
+                    <img src="figs/project2_1.png" alt="Project 2" class="main-image" style="width: 150px; height: auto;">
+                    <h4 class="click-to-expand">Click to expand.</h4>
+                    <div class="project-details">
+                      <p>- Led the design and shop drawing process for an electric-powered buggy car, covering the entire vehicle development from initial concept to final assembly. The project involved handling the design and assembly from scratch, including everything from small components like bolts and nuts to large components like wheels and pipes. Key highlights of the project include: <br>
+                        i) <b>Component Design:</b> Designed custom metal shapes to fit standard components such as bolts, nuts, bearings, and pipes. <br>
+                        ii) <b>System Assembly:</b> Designed and assembled critical systems, including steering and suspension, while calculating the required power specifications to select the appropriate motor. <br>
+                        iii) <b>Material and Technology Selection:</b> Chose the right materials and tools, including CNC machining, to produce precise shapes and components for the construction. <br>
+                        - This project showcases a comprehensive approach to mechanical design, incorporating both practical assembly skills and technical analysis to deliver a fully functional electric vehicle.
+                      </p>
+                      <div class="additional-images">
+                        <img src="figs/project2_2.png" alt="Project 1" style="width: 200px; height: 170px;">
+                        <img src="figs/project2_4.png" alt="Project 1" style="width: 200px; height: 170px;">
+                        <img src="figs/project2_8.png" alt="Project 1" style="width: 200px; height: 170px;">
+                        <img src="figs/project2_6.png" alt="Project 1" style="width: 200px; height: 170px;">
+                        <img src="figs/project2_7.png" alt="Project 1" style="width: 200px; height: 170px;">
+                        <img src="figs/project2_3.png" alt="Project 1" style="width: 200px; height: 170px;">
+                      </div>
+                      <h4>Click to collapse.</h4>
+                    </div>
+                  </div> 
+                  <div class="project" id="project3" onclick="expandProject(this)">
+                    <h3>3) Sun-Tracking Solar System</h3>
+                    <img src="figs/project3_1.png" alt="Project 3" class="main-image" style="width: 150px; height: auto;">
+                    <h4 class="click-to-expand">Click to expand.</h4>
+                    <div class="project-details">
+                      <p>- Design and implementation of a solar tracking system that optimizes sunlight intake by rotating toward the optimal angle. The system is modeled and simulated using Proteus and incorporates two Light Dependent Resistor (LDR) sensors, an ADC converter, a stepper motor, a keypad, and an LCD monitor. The programming is developed in MPLAB using low-level assembly language and deployed on a PIC18F458 microcontroller. Key features of the system include: <br>
+                         i) <b>Dual operation modes</b>: The system supports both automatic and manual modes, selectable via the keypad. <br> 
+                         ii) <b>Analog-to-digital conversion</b>: Sensor outputs are converted from continuous analog signals to 8-bit discrete digital values and stored in microcontroller registers. <br> 
+                         iii) <b>Dynamic motor adjustment</b>: If the difference between the two sensor readings exceeds a predefined threshold, the stepper motor adjusts its position toward the lower value. The motor angle is then displayed in real-time on the LCD monitor. <br>
+                         - This project highlights a practical approach to combining sensor technology, microcontroller programming, and motor control to achieve an efficient solar tracking mechanism.
+                      </p>
+                      <div class="additional-images">
+                        <img src="figs/project3_2.png" alt="Project 1" style="width: 400px; height: 170px;">
+                        <img src="figs/project3_6.png" alt="Project 1" style="width: 100px; height: 170px;">
+                        <img src="figs/project3_3.png" alt="Project 1" style="width: 200px; height: 140px;">
+                        <img src="figs/project3_4.png" alt="Project 1" style="width: 200px; height: 140px;">
+                        <img src="figs/project3_5.png" alt="Project 1" style="width: 200px; height: 140px;">
+                        
+                      </div>
+                      <h4>Click to collapse.</h4>
+                    </div>
+                  </div> 
+                </div>
+              
+                <div class="category" id="masters">
+                  <h2>Masters in Robotics Projects</h2>
+                  <div class="project" id="project4" onclick="expandProject(this)">
+                    <h3>1) Infrastructure/Road Perception</h3>
+                    <img src="figs/project4_1.png" alt="Project 4" class="main-image" style="width: 450px; height: auto;">
+                    <h4 class="click-to-expand">Click to expand.</h4>
+                    <div class="project-details">
+                      <p>- The team project focused on evaluating the precision of an autonomous vehicle’s perception system by utilizing a LiDAR sensor mounted on roadside infrastructure. The objective was to address situations where onboard LiDARs may be blinded or obstructed, leading to sensor data imprecision. The main tasks involved: <br>
+                        i) <b>Data Collection:</b> Collected data using static LiDAR sensor via Veloview, while adjusting parameters like angle, height, and orientation to find the optimal configuration for detecting pedestrians and vehicles in various scenarios. <br>
+                        ii) <b>Object Detection:</b> Employed a state-of-art algorithm to detect both the vehicle and pedestrian using data from static and vehicle-mounted LiDAR sensors, addressing issues like occlusion and sensor blindness. <br>
+                        iii) <b>Measurement Calculation:</b> Focused on extracting crucial metrics such as the position, orientation, and velocity of both the vehicle and pedestrian, with a key emphasis on calculating the distance between them during crossing events. <br>
+                        iv) <b>LiDAR Evaluation:</b> Evaluated the effectiveness and limitations of the infrastructure-mounted LiDAR method. The assessment determined whether the system could achieve the required precision or if additional sensors, such as cameras, would be necessary to enhance performance. <br>
+                        - This project highlights the use of infrastructure-mounted LiDAR to improve the reliability of autonomous vehicle perception systems, addressing challenges such as sensor occlusion and providing a more robust solution for accurate object tracking and positioning in real-world environments.
+                      </p>
+                      <div class="additional-images">
+                        <img src="figs/project4_2.png" alt="Project 1" style="width: 200px; height: 170px;">
+                        <img src="figs/project4_3.png" alt="Project 1" style="width: 200px; height: 170px;">
+                        <img src="figs/project4_4.png" alt="Project 1" style="width: 200px; height: 170px;">
+                        <img src="figs/project4_6.png" alt="Project 1" style="width: 300px; height: 170px;">
+                        <img src="figs/project4_5.png" alt="Project 1" style="width: 300px; height: 170px;">
+                      </div>
+                      <h4>Click to collapse.</h4>
+                    </div>
+                  </div>       
+                  <div class="project" id="project5" onclick="expandProject(this)">
+                    <h3>2) Cooperative Localization of Three Vehicles</h3>
+                    <img src="figs/project5_2.png" alt="Project 5" class="main-image" style="width: 150px; height: auto;">
+                    <h4 class="click-to-expand">Click to expand.</h4>
+                    <div class="project-details">
+                      <p>- The project focused on improving the state and covariance estimation of three vehicles moving around a roundabout using real-world GNSS and sensor data. The primary objective was to address challenges in cooperative vehicle perception by using sensor fusion techniques and information exchange. Key aspects of the project include: <br>
+                        i) <b>State Estimation Methods:</b> Implemented three methods for estimating the states and their associated covariance for three vehicles. This included individual state estimation using an extended Kalman filter (EKF) and cooperative estimation using information exchange and covariance intersection. <br>
+                        ii) <b>Sensor Fusion:</b> Leveraged data from multiple sensors, including GNSS, LiDAR, and embedded vehicle sensors, to improve the accuracy and reliability of state estimation. This process is essential for autonomous vehicles to make informed decisions based on their environment. <br>
+                        iii) <b>Cooperative Perception:</b> Focused on the problem of information loops in cooperative vehicle perception, where vehicles share their sensory data to improve overall situational awareness. <br>
+                        - The project showcases the potential of cooperative perception and sensor fusion to improve the safety and reliability of autonomous vehicle systems, particularly in complex driving scenarios like roundabouts.
+
+                      </p>
+                      <div class="additional-images">
+                        <video width="300" height="auto" controls controlsList="nodownload">
+                            <source src="figs/Cooperativelocalization.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>       
+                      </div>
+                      <h4>Click to collapse.</h4>
+                    </div>
+                  </div>
+                  <div class="project" id="project5" onclick="expandProject(this)">
+                    <h3>3) Quadropter Control</h3>
+                    <img src="figs/project6_1.png" alt="Project 5" class="main-image" style="width: 150px; height: auto;">
+                    <h4 class="click-to-expand">Click to expand.</h4>
+                    <div class="project-details">
+                      <p>- The project focused on designing control laws for a quadcopter, addressing the challenges of its non-linear dynamics and aerodynamically unstable nature. The main goal was to develop control strategies that enable the quadcopter to track desired functions for its orientation and altitude. Key aspects of the project include: <br>
+                        i) <b>Quadcopter Dynamics:</b> Modeled as a six-degree-of-freedom, under-actuated system, with control strategies for vertical, horizontal, and rotational movements.<br>
+                        ii) <b>Control Strategies:</b> Various controllers were developed, including: <br>
+                        a) Backstepping Control: A recursive method to break down the system into subsystems, stabilizing each state progressively using a Control Lyapunov Function.  <br>
+                        b) Nested Saturation and Feedback Linearization: Additional control strategies developed to further enhance performance and stability across different operating conditions. <br>
+                        iii) <b>System Behavior Analysis:</b> Analyze the dynamic behavior of the quadcopter system under various flight conditions, including the impact of non-linearities, aerodynamic instabilities, and the coupling between different rotational axes. <br>
+                        - The project showcases the development of effective control laws for quadcopters, addressing both their complex dynamics and control challenges, with potential for further improvements through optimization techniques.
+                      </p>
+                      <div class="additional-images">
+                        <video width="300" height="auto" controls controlsList="nodownload">
+                            <source src="figs/drone_animation.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>       
+                      </div>
+                      <h4>Click to collapse.</h4>
+                    </div>
+                  </div>       
+              </div>
+              
             
         </section>
         <section id="cv" class="panel">
