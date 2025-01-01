@@ -14,33 +14,32 @@ function showPanel(panelId) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const lightModeRadio = document.getElementById("lightMode");
-    const darkModeRadio = document.getElementById("darkMode");
+    const themeToggle = document.querySelector(".input"); // Select the checkbox toggle
+    const rootElement = document.documentElement; // Get the root element
 
     // Check local storage for the saved theme
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
-        document.documentElement.classList.add("dark-mode");
-        darkModeRadio.checked = true;
+        rootElement.classList.add("dark-mode");
+        themeToggle.checked = true; // Ensure the toggle reflects the saved theme
     } else {
-        lightModeRadio.checked = true;
+        rootElement.classList.remove("dark-mode");
+        themeToggle.checked = false;
     }
 
-    // Listen for theme changes
-    lightModeRadio.addEventListener("change", () => {
-        if (lightModeRadio.checked) {
-            document.documentElement.classList.remove("dark-mode");
+    // Add event listener to the toggle button
+    themeToggle.addEventListener("change", () => {
+        if (themeToggle.checked) {
+            rootElement.classList.add("dark-mode");
+            localStorage.setItem("theme", "dark");
+        } else {
+            rootElement.classList.remove("dark-mode");
             localStorage.setItem("theme", "light");
         }
     });
-
-    darkModeRadio.addEventListener("change", () => {
-        if (darkModeRadio.checked) {
-            document.documentElement.classList.add("dark-mode");
-            localStorage.setItem("theme", "dark");
-        }
-    });
 });
+
+
 
 function expandProject(project) {
     // Toggle the "expanded" class

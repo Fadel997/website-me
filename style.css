@@ -7,6 +7,15 @@ body, h1, h2, p, ul, a {
     text-decoration: none;
 }
 
+/* Body background */
+body {
+  background-color: var(--background-color); /* Use a variable if you have one */
+}
+
+/* If no variable is defined, fallback to a default color */
+body {
+  background-color: #f0f0f0; /* Light gray background as a fallback */
+}
 /* Header */
 header {
     background: #f5f5f5;
@@ -56,24 +65,258 @@ header p {
     right: 20px;
 }
 
-/* CV Download Button */
-.cv-download .download-btn {
+  /* Optional: Customize Colors */
+  :root {
+    --accent-color: #007bff; /* Blue */
+    --text-color: #333; /* Dark gray */
+  }
+  
+  
+  /* Contact Section Styling */
+  .contact-details {
+    margin-top: 40px;
+  }
+  
+  .contact-details h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+  
+  .contact-details p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+  }
+  
+  .contact-item {
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .contact-item a {
+    color: var(--text-color);
     text-decoration: none;
-    padding: 10px 20px;
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    border-radius: 20px;
-    font-size: 1em;
     font-weight: bold;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease;
+  }
+  
+  .contact-item a:hover {
+    color: var(--accent-color);
+  }
+  
+  .contact-item i {
+    font-size: 1.5em;
+    color: var(--accent-color);
+  }
+  
+  /* Contact */
+/* General Styling for Contact Section */
+#cv-contact {
+  text-align: center;
+  padding: 40px;
+  background-color: var(--background-color);
 }
 
-.cv-download .download-btn:hover {
-    background-color: var(--text-color);
-    color: var(--bg-color);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #2c2c2c;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 0 auto;
 }
+
+:root.dark-mode .card {
+  background-color: #1f1f1f; /* Darker background for blocks in dark mode */
+  color: #e0e0e0; /* Lighter text color for better contrast */
+}
+
+
+/* User Info Styling */
+.imge {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Usericon {
+  width: 80px;
+  height: 80px;
+  background-color: #ce6300;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.UserName {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #ce6300;
+}
+
+.Id {
+  font-size: 1em;
+  color: #ce6300;
+
+}
+
+/* Description Styling */
+.Description {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.Description p {
+  font-size: 1em;
+  margin: 10px 0;
+  color: #ddd;
+}
+
+/* CV Download Button */
+.cv-download-btn {
+  text-decoration: none;
+  font-size: 1em;
+  color: #fff;
+  background-color:  #ce6300;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.cv-download-btn:hover {
+  background-color: #b95a00;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+/* Social Media Styling */
+.social-media {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.social-media a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #131313;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-media a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.social-media svg {
+  width: 20px;
+  height: 20px;
+  fill: #ce6300;
+  transition: fill 0.3s ease;
+}
+
+.social-media a:hover svg {
+  fill: #ff8d21;
+}
+
+.contact-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-card {
+  width: 300px;
+  height: 120px;
+  perspective: 1200px; /* Required for 3D flipping */
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.contact-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d; /* Enables 3D flipping */
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Smooth animation with bounce effect */
+}
+
+.contact-card:hover .contact-card-inner {
+  transform: rotateY(180deg); /* Flips the card */
+}
+
+.contact-card-front {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.contact-card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+.contact-card-front {
+  background: linear-gradient(135deg, #ce6300,  #2e2e2e); /* Gradient for a modern look */
+  color: #333;
+}
+
+.contact-card-back {
+  background: linear-gradient(135deg, #ce6300,#ff7b00); /* Gradient for the back side */
+  color: #333;
+  transform: rotateY(180deg);
+}
+
+.down-arrow {
+  font-size: 30px;
+  display: block;
+  margin-top: 90px; /* Adjust the spacing between text and arrow */
+  margin-left: 90px; /* Adjust the spacing between text and arrow */
+  color:#1d1d1d;
+  transition: transform 0.4s;
+}
+
+.contact-card-container:hover .down-arrow {
+  transform: translateY(5px); /* Adds a small movement effect when hovered */
+}
+
+
+
+
+
 nav ul {
     display: flex;
     justify-content: center;
@@ -458,6 +701,14 @@ video {
     --accent-color: #007bff;
 }
 
+/* Apply Theme Variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
 /* Dark Theme */
 :root.dark-mode {
     --bg-color: #333; /* Dark background */
@@ -466,55 +717,100 @@ video {
 }
 
 
-/* Apply Theme Variables */
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 34px;
 }
 
-/* Stylish Theme Toggle */
-/* Theme Toggle Container */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 10px;
-    display: flex;
-    gap: 10px;
-    font-size: 1em;
+.switch .input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-/* Hide the actual radio buttons */
-.theme-toggle input {
-    display: none;
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #636363; /* Dark background */
+  transition: background-color 0.4s;
+  border-radius: 30px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Style for the labels (buttons) */
-.theme-toggle label {
-    display: flex;
-    align-items: center;  /* Align the image and text vertically */
-    padding: 10px 20px;
-    border: 2px solid var(--text-color);
-    border-radius: 20px;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  left: 2px;
+  bottom: 2px;
+  background-color: #e8e8e8; /* Light color */
+  transition: transform 0.4s;
+  z-index: 2;
 }
 
-/* Image inside the label (icon) */
-.mode-icon {
-    width: 20px;  /* Set a small size for the icon */
-    height: 20px;
-    margin-right: 8px;  /* Space between the icon and text */
+.input:checked + .slider {
+  background-color: #e8e8e8; /* Light background */
 }
 
-/* Active (checked) label */
-.theme-toggle input:checked + label {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    border-color: var(--accent-color);
+.input:checked + .slider:before {
+  transform: translateX(30px);
+  background-color: #333; /* Dark color */
 }
+
+/* Icon style adjustments */
+.icon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 5px;
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.sun {
+  left: 8px;
+  opacity: 1;
+  z-index: 1;
+}
+
+.moon {
+  right: 6px;
+  top: 2px;
+  opacity: 1;
+  z-index: 1;
+  transform: scale(0.8);
+}
+
+.icon img {
+  width: 100%; /* Ensures the image fits inside the span */
+  height: auto;
+}
+
+.input:checked + .slider .sun {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.input:checked + .slider .moon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+
+
+
+
+
 
 @media (max-width: 768px) {
     header {
@@ -594,19 +890,9 @@ body {
 }
 
 @media (max-width: 768px) {
-    .theme-toggle {
-        font-size: 0.5em;
-        width: 250px;  /* Set a small size for the icon */
-        height: 30px;
-    }
-    .theme-toggle label {
-        border: 1px solid var(--text-color);
-    }
-    .mode-icon {
-        width: 15px;  /* Set a small size for the icon */
-        height: 15px;
-        margin-right: 8px;  /* Space between the icon and text */
-    }
+  .switch {
+    top:10px;
+  }
 }
 
 @media (max-width: 768px) {
