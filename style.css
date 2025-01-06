@@ -123,7 +123,7 @@ header p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #2c2c2c;
+  background: #333;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
@@ -146,7 +146,7 @@ header p {
 .Usericon {
   width: 80px;
   height: 80px;
-  background-color: #ce6300;
+  background-color: #0099ff;
   border-radius: 50%;
   margin: 0 auto;
 }
@@ -156,12 +156,12 @@ header p {
   font-weight: bold;
   margin-top: 10px;
   margin-bottom: 10px;
-  color: #ce6300;
+  color: #0099ff;
 }
 
 .Id {
   font-size: 1em;
-  color: #ce6300;
+  color: #0099ff;
 
 }
 
@@ -183,7 +183,7 @@ header p {
   text-decoration: none;
   font-size: 1em;
   color: #fff;
-  background-color:  #ce6300;
+  background-color:  #0099ff;
   padding: 10px 20px;
   border-radius: 5px;
   display: inline-flex;
@@ -194,7 +194,7 @@ header p {
 }
 
 .cv-download-btn:hover {
-  background-color: #b95a00;
+  background-color: #007bff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
 }
@@ -226,12 +226,12 @@ header p {
 .social-media svg {
   width: 20px;
   height: 20px;
-  fill: #ce6300;
+  fill: #0099ff;
   transition: fill 0.3s ease;
 }
 
 .social-media a:hover svg {
-  fill: #ff8d21;
+  fill: #0099ff;
 }
 
 .contact-card-container {
@@ -290,12 +290,12 @@ header p {
 
 
 .contact-card-front {
-  background: linear-gradient(135deg, #ce6300,  #2e2e2e); /* Gradient for a modern look */
+  background: linear-gradient(135deg, #0099ff,  #2e2e2e); /* Gradient for a modern look */
   color: #333;
 }
 
 .contact-card-back {
-  background: linear-gradient(135deg, #ce6300,#ff7b00); /* Gradient for the back side */
+  background: linear-gradient(135deg, #0099ff,#2a91ff); /* Gradient for the back side */
   color: #333;
   transform: rotateY(180deg);
 }
